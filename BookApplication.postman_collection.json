@@ -1,0 +1,613 @@
+{
+	"info": {
+		"_postman_id": "34978ad3-9388-40b1-8abc-cb125557dc87",
+		"name": "OOD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23653352"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Get All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Available Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/getAvailableBooks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"getAvailableBooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/getBookById?bookId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"getBookById"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/getBooksByCategory?category=education",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"getBooksByCategory"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "education"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Book By ISBN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/getBookByISBN?isbn=948-2334524453",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"getBookByISBN"
+							],
+							"query": [
+								{
+									"key": "isbn",
+									"value": "948-2334524453"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Book By Title/Author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/searchBooks?keyword=education&sortBy=title&sortOrder=asc&minPrice=10.00&maxPrice=60.00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"searchBooks"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "education"
+								},
+								{
+									"key": "sortBy",
+									"value": "title"
+								},
+								{
+									"key": "sortOrder",
+									"value": "asc"
+								},
+								{
+									"key": "minPrice",
+									"value": "10.00"
+								},
+								{
+									"key": "maxPrice",
+									"value": "60.00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"title\": \"NLTK\",\r\n        \"author\": \"Lu Xiao\",\r\n        \"edition\": 3,\r\n        \"publicationYear\": 2000,\r\n        \"language\": \"English\",\r\n        \"publisher\": \"Syracuse Press\",\r\n        \"originalPrice\": 25.99,\r\n        \"currentPrice\": 25.99,\r\n        \"description\": \"Basics of NLTK.\",\r\n        \"category\": \"EDUCATION\",\r\n        \"conditionDescription\": \"New book\",\r\n        \"condition\": \"NEW\",\r\n        \"status\": \"AVAILABLE\",\r\n        \"isbn\": \"948-2334525453\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books/addBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"addBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"title\": \"NLTK\",\r\n        \"author\": \"Lu Xiao\",\r\n        \"edition\": 2,\r\n        \"publicationYear\": 2022,\r\n        \"language\": \"English\",\r\n        \"publisher\": \"Syracuse Press\",\r\n        \"originalPrice\": 24.99,\r\n        \"currentPrice\": 24.99,\r\n        \"description\": \"Basics of Natural Langugage Processing.\",\r\n        \"category\": \"EDUCATION\",\r\n        \"conditionDescription\": \"New book\",\r\n        \"condition\": \"GOOD\",\r\n        \"status\": \"AVAILABLE\",\r\n        \"isbn\": \"948-2332524453\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books/updateBook?bookId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"updateBook"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/deleteBook?bookId=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"deleteBook"
+							],
+							"query": [
+								{
+									"key": "bookId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buy Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/buyBook?userId=1&bookId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"buyBook"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "bookId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sell Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/sellBook?userId=1&bookId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"sellBook"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "bookId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SellBook By ISBN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"title\": \"Harry potter and Goblet of Fire\",\r\n        \"author\": \"JK Rowling\",\r\n        \"edition\": 3,\r\n        \"publicationYear\": 2023,\r\n        \"language\": \"English\",\r\n        \"publisher\": \"Syracuse Press\",\r\n        \"originalPrice\": 15.99,\r\n        \"currentPrice\": 15.99,\r\n        \"description\": \"Harry Potter.\",\r\n        \"category\": \"FICTION\",\r\n        \"conditionDescription\": \"New book\",\r\n        \"condition\": \"NEW\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books/sellBookByISBN?userId=3&isbn=948-2331525553",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"sellBookByISBN"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "isbn",
+									"value": "948-2331525553"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/getUserById?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"getUserById"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search User By Username or Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/searchUsers?keyword=aks.ganesan@example.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"searchUsers"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "aks.ganesan@example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"aksh_ganesan\",\r\n    \"email\": \"aksh.ganesan@example.com\",\r\n    \"password\": \"aksh123\",\r\n    \"firstName\": \"Akshaya\",\r\n    \"lastName\": \"Ganesan\",\r\n    \"phoneNumber\": \"3156645743\",\r\n    \"funds\": 200.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/addUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"addUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"aksh_ganesan\",\r\n    \"email\": \"aksh.ganesan@example.com\",\r\n    \"password\": \"akshdd123\",\r\n    \"firstName\": \"Akshaya\",\r\n    \"lastName\": \"Ganesan\",\r\n    \"phoneNumber\": \"3156645743\",\r\n    \"funds\": 200.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/updateUser?userId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"updateUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/deleteUser?userId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"deleteUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Books Purchased by User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/purchasedBooks?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"purchasedBooks"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Books Sold by User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/booksSoldByUser?userId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"booksSoldByUser"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Funds",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/addFunds?userId=1&funds=20.00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"addFunds"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "funds",
+									"value": "20.00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
